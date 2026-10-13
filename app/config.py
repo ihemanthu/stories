@@ -19,6 +19,7 @@ class Settings:
     PGADMIN_PORT: int = int(_require("PGADMIN_PORT"))
     PGADMIN_PASSWORD: str = _require("PGADMIN_PASSWORD")
     PGADMIN_EMAIL: str = _require("PGADMIN_EMAIL")
+    HTTP_PROTOCOL: str = _require("HTTP_PROTOCOL")
 
     DB_ECHO: bool = os.getenv("DB_ECHO", "false").lower() == "true"
     POOL_PRE_PING: bool = os.getenv("POOL_PRE_PING", "false").lower() == "true"

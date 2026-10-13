@@ -24,13 +24,11 @@ def get_connection():
         db_logger.error(f"Database Connection Error: {connection_error}")
         raise 
 
+def check_database() -> bool:
 
-try:
     with get_connection() as connection:
         result = connection.execute(text('SELECT 1;'))
-    print(result.scalar())
-except Exception as error:
-    db_logger.error(f"Error While : {error}")
+        return result.scalar() == 1
 
 
 
